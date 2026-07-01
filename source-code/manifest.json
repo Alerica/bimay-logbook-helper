@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "Logbook Helper",
+  "version": "1.0",
+
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+
+  "host_permissions": [
+    "https://activity-enrichment.apps.binus.ac.id/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "https://activity-enrichment.apps.binus.ac.id/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "page.js"
+      ],
+      "matches": [
+        "https://activity-enrichment.apps.binus.ac.id/*"
+      ]
+    }
+  ],
+
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
